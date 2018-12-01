@@ -1,3 +1,3 @@
-# study
+# :mortar_board: Study Notes
 
-:books::mortar_board: study notes
+:books: study notes
