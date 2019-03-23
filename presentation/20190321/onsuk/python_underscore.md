@@ -2,11 +2,11 @@
 
 ---
 
-## Usage of underscore(_) 5 cases
+## Usage of underscore(_) -> 4 cases
 - 인터프리터(Interpreter)에서 마지막 값을 저장할 때
 - 값을 무시하고 싶을 때 (흔히 'I don't care'이라 부른다.)
 - 변수나 함수명에 특별한 의미 또는 기능을 부여하고자 할 때
-- 국제화(Internationalization, i19n) / 지역화(Localization, l10n) 함수로써 사용할 때
+
 - 숫자 리터럴값의 자릿수 구분을 위한 구분자로써 사용할 때
 
 ---
@@ -121,6 +121,31 @@ print(dir(B()))
 ```
 > python dir() 내장함수는 어떤 객체를 인자로 넣어주면 해당 객체가 어떤 변수와 메소드(method)를 가지고 있는지 나열해준다.
 
+---
+### (3) `__double_leading_and_trailng_underscores__`
+
+- 스페셜 변수나 메서드에 사용되는 컨벤션
+- `__init__`, `__len__` 등이 있다.
+- 특정한 문법적 기능을 제공하거나 특정한 일을 수행한다.
+- `__init__`의 경우 클래스의 인스턴스가 생성될 때 처음으로 실행되는 메서드인데, 인스턴스의 초기화 작업을 이 메서드의 내용으로 작성할 수 있다.
+``` python
+class A:
+    def __init__(self, a): 
+        self.a = a
+# 스페셜 메서드 __init__에서 초기화 작업을 한다.
+```
+---
+## 4.숫자 리터럴 값의 자릿수 구분을 위한 구분자로써 사용할 때
+Python 3.6에 추가된 문법으로 언더스코어로 숫자값을 좀 더 읽기 쉽도록 자릿수를 구분할 수 있게 되었다.
+``` python
+dec_base = 1_000_000
+bin_base = 0b_1111_0000
+hex_base = 0x_1234_abcd
+
+print(dec_base) # 1000000
+print(bin_base) # 240
+print(hex_base) # 305441741
+```
 ---
 
 # Reference
